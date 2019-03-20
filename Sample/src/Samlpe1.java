@@ -14,6 +14,8 @@ import java.util.Scanner;
 
 public class Samlpe1 { 
 	public static int middle;
+	
+	/* ì´ì§„ ê²€ìƒ‰ì„ recursionìœ¼ë¡œ êµ¬í˜„í•˜ì§€ ì•Šì•˜ìŒ */
 	public static int search(ArrayList<String> a,int n,String word) {
 			int low,high;
 		
@@ -46,8 +48,9 @@ public class Samlpe1 {
 			}
 			return -1;
 	 }
+	
 public static void main(String[] args) throws IOException {
-Scanner in=new Scanner(System.in);
+	Scanner in=new Scanner(System.in);
 	
 //	File src = new File("C:\\Users\\suuuk\\Desktop\\dict.txt");
 	File dst = new File("sample.txt");
@@ -73,14 +76,14 @@ Scanner in=new Scanner(System.in);
 //		
 //		bw.write(a);
 //	}
-//	System.out.println("º¹»ç¿Ï·á");
+//	System.out.println("ë³µì‚¬ì™„ë£Œ");
 //	
 //	bw.flush();
 //	
 	FileInputStream fis1=new FileInputStream(dst);
 	InputStreamReader isr=new InputStreamReader(fis1);
 	BufferedReader br=new BufferedReader(isr);
-ArrayList<String> a1=new ArrayList<String>();
+	ArrayList<String> a1=new ArrayList<String>();
 	String ss=null;
 	while(true) {
 		ss=br.readLine();
@@ -89,26 +92,23 @@ ArrayList<String> a1=new ArrayList<String>();
 			break;
 		a1.add(ss);
 		ss=br.readLine();
-		
 	}
 	while(true) {
-	
-
-	System.out.print("ÀÔ·Â : ");
-	String word1=in.nextLine();
-	if(word1.equalsIgnoreCase("size")) {
-		System.out.println("size="+a1.size());
-		continue;
-	}
-	if(word1.equalsIgnoreCase("exit")) {
-		System.out.println("Á¾·áÇÕ´Ï´Ù");
-		break;
-	}
-	String word2=new String(word1+" ");
-	String word=word2.substring(5,word2.length());
-	System.out.println(word);
-//	int count=0;
-//	for(int i=0;i<a1.size();i++) {
+		System.out.print("ì…ë ¥ : ");
+		String word1=in.nextLine();
+		if(word1.equalsIgnoreCase("size")) {
+			System.out.println("size="+a1.size());
+			continue;
+		}
+		if(word1.equalsIgnoreCase("exit")) {
+			System.out.println("ì¢…ë£Œí•©ë‹ˆë‹¤");
+			break;
+		}
+		String word2=new String(word1+" ");
+		String word=word2.substring(5,word2.length());
+		System.out.println(word);
+//		int count=0;
+//		for(int i=0;i<a1.size();i++) {
 //		String t=a1.get(i);
 //		String tt=t.substring(0,word.length());
 //		if(word.equals(tt))
@@ -117,10 +117,10 @@ ArrayList<String> a1=new ArrayList<String>();
 //
 //			
 //		}
-//	}
-//	System.out.println("fount"+count+"items.\n");
-//	count=0;
-//	for(int i=0;i<a1.size();i++) {
+//		}
+//		System.out.println("fount"+count+"items.\n");
+//		count=0;
+//		for(int i=0;i<a1.size();i++) {
 //		String t=a1.get(i);
 //		String tt=t.substring(0,word.length());
 //		if(word.equals(tt))
@@ -129,24 +129,24 @@ ArrayList<String> a1=new ArrayList<String>();
 //			System.out.println(t);
 //			System.out.print("\n");
 //		}
-//	}
+//		}
 	
-	//ÀÌÁø°Ë»ö
-	int j;
-	if(word.equalsIgnoreCase("A ")) {
-		j=0;
-	}
-	else
-		j=search(a1,a1.size(),word);
+		//ì´ì§„ê²€ìƒ‰
+		int j;
+		if(word.equalsIgnoreCase("A ")) {
+			j=0;
+		}
+		else
+			j=search(a1,a1.size(),word);
 	
-	if(j==-1) {
-		System.out.println("Not Fount");
+		if(j==-1) {
+			System.out.println("Not Fount");
 		
-		String t=a1.get(middle);
-//		String z=t.substring(0,6);
+			String t=a1.get(middle);
+//			String z=t.substring(0,6);
 //	
 //		if(z.equalsIgnoreCase("Zythum ")) {
-//			System.out.println("¿©±â");
+//			System.out.println("ì—¬ê¸°");
 //		}
 		int wi=t.indexOf(")");
 		String tt=t.substring(0, wi+1);
@@ -156,7 +156,7 @@ ArrayList<String> a1=new ArrayList<String>();
 			System.out.println(tt);
 			System.out.println("---------");
 			if(a1.get(middle).substring(0,7).equalsIgnoreCase("Zythum ")) {
-				System.out.println("¾ø½À´Ï´Ù.");
+				System.out.println("ì—†ìŠµë‹ˆë‹¤.");
 			
 			}
 			else {
